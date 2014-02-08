@@ -6,6 +6,7 @@ class Plugin_Video extends Plugin {
 		$width		= $this->fetch_param('width', 640, 'is_numeric');
 		$height		= $this->fetch_param('height', 390, 'is_numeric');
 		$videoid	= $this->fetch_param('id', false, false, false, false); // defaults to false
+		$related        = (int) $this->fetch_param('related', true, false, true);
 
 		if ($src && ! $videoid) {
 			//http://stackoverflow.com/questions/6556559/youtube-api-extract-video-id
@@ -34,7 +35,7 @@ class Plugin_Video extends Plugin {
 		}
 
 		if ($videoid) {
-			$html = '<iframe class="youtube video" type="text/html" width="'.$width.'" height="'.$height.'" src="https://www.youtube.com/embed/'.$videoid.'?feature=oembed&wmode=opaque&enablejsapi=1" frameborder="0" allowfullscreen></iframe>';
+			$html = '<iframe class="youtube video" type="text/html" width="'.$width.'" height="'.$height.'" src="https://www.youtube.com/embed/'.$videoid.'?feature=oembed&wmode=opaque&enablejsapi=1&rel='.$related.'" frameborder="0" allowfullscreen></iframe>';
 			return $html;
 		}
 
