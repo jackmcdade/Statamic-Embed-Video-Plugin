@@ -1,15 +1,16 @@
 #Statamic Video Plugin
 
-This is a plugin for Statamic to embed videos from YouTube and Vimeo.
+This is a plugin for Statamic to embed videos from YouTube.
 
 ##YouTube
 
 ###Usage
 
-	{{ video:youtube src="http://www.youtube.com/watch?v=X5AZzOw7FwA" }}
+	{{ video src="http://www.youtube.com/watch?v=X5AZzOw7FwA" }}
 	
-####Paramaters
+####Parameters
 * src
 * videoid
 * width
 * height
+* related
